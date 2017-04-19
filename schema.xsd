@@ -1,0 +1,200 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="knihovna">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nastaveni-app">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="jazyk"/>
+              <xs:element name="plug">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="komentare"/>
+                    <xs:element type="xs:byte" name="onlinechat"/>
+                    <xs:element type="xs:byte" name="onlinectecka"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="kontakt-admin"/>
+              <xs:element name="social-media">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="facebook"/>
+                    <xs:element type="xs:string" name="twitter"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="mobilniadata">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="grafika">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="background"/>
+                          <xs:element type="xs:string" name="font"/>
+                          <xs:element type="xs:string" name="fontcolor"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="prava">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="typ-prav" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:byte" name="cteniknih"/>
+                    <xs:element type="xs:byte" name="komentar"/>
+                    <xs:element type="xs:byte" name="hodnoceni"/>
+                    <xs:element type="xs:byte" name="mazaniknih"/>
+                    <xs:element type="xs:byte" name="pridavaniknih"/>
+                    <xs:element type="xs:byte" name="upravazanru"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="TypPrav" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="uzivatel">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="osoba" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="jmeno"/>
+                    <xs:element type="xs:string" name="prijmeni"/>
+                    <xs:element type="xs:string" name="prihlas-jmeno"/>
+                    <xs:element type="xs:string" name="typ-prav"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:byte" name="Oid" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="knihovny">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="typknihovny" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="nazevknuhovny"/>
+                    <xs:element type="xs:string" name="knihaid" maxOccurs="unbounded" minOccurs="0"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="typ" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="zanry">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="technika">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="kniha" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="zanr"/>
+                          <xs:element type="xs:string" name="nazev"/>
+                          <xs:element type="xs:short" name="ISBN"/>
+                          <xs:element type="xs:byte" name="pujceni"/>
+                          <xs:element type="xs:short" name="rok"/>
+                          <xs:element type="xs:string" name="autor"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="id" use="optional"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Botanika">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="kniha">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="zanr"/>
+                          <xs:element type="xs:string" name="nazev"/>
+                          <xs:element type="xs:short" name="ISBN"/>
+                          <xs:element type="xs:byte" name="pujceni"/>
+                          <xs:element type="xs:short" name="rok"/>
+                          <xs:element type="xs:string" name="autor"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="id"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Kucharka">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="kniha">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="zanr"/>
+                          <xs:element type="xs:string" name="nazev"/>
+                          <xs:element type="xs:short" name="ISBN"/>
+                          <xs:element type="xs:byte" name="pujceni"/>
+                          <xs:element type="xs:short" name="rok"/>
+                          <xs:element type="xs:string" name="autor"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="id"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="motoristika">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="kniha">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="zanr"/>
+                          <xs:element type="xs:string" name="nazev"/>
+                          <xs:element type="xs:short" name="ISBN"/>
+                          <xs:element type="xs:byte" name="pujceni"/>
+                          <xs:element type="xs:short" name="rok"/>
+                          <xs:element type="xs:string" name="autor"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="id"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="vzdelavaci">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="kniha">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="zanr"/>
+                          <xs:element type="xs:string" name="nazev"/>
+                          <xs:element type="xs:short" name="ISBN"/>
+                          <xs:element type="xs:byte" name="pujceni"/>
+                          <xs:element type="xs:short" name="rok"/>
+                          <xs:element type="xs:string" name="autor"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="id"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
